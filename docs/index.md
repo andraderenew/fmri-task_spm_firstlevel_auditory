@@ -1,45 +1,45 @@
-# <Project Title>: <Modality & Tools> on <Dataset>
+# Task fMRI: SPM First-Level (Auditory) (+ FEAT replication)
 
-### What this project asks (2–3 lines)
-A crisp statement of the scientific question and why it matters.
+**Goal:** Reproduce the classic SPM Auditory first-level GLM and (optionally) replicate one contrast in FSL FEAT.
+
+---
+
+## Snapshot
+- **Dataset:** SPM Auditory tutorial (single subject)
+- **Local subset:** 1 subject · **Disk:** ≤ ~0.5–1 GB
+- **Tools:** SPM12 (GLM), optional FEAT replication
+- **Status:** <planned / in progress / complete>
+- **Last updated:** <YYYY-MM-DD>
 
 ---
 
 ## Data
-- **Source:** <dataset name + link> · **License/DUA:** <text>
-- **Subset used:** <n subjects/sessions> · **Approx disk:** <X GB> (raw) / <Y GB> (derivatives)
-- **Layout:** BIDS (if applicable)
-
-> We **do not** commit raw data to the repository. If needed, link to the public source and keep large artifacts out of git. (GitHub looks for an entry file in `/docs` such as `index.md` when you publish Pages from that folder.)
+- **Source:** SPM Auditory example (public).  
+- **What I downloaded:** single subject, runs used.  
+- **Layout:** BIDS or SPM-style folders.
 
 ---
 
 ## Pipeline (high-level)
-Preprocessing → Analysis → Statistics → QC  
-Tools: FreeSurfer / FSL / SPM + CAT12 / Brainstorm / EEGLAB / FieldTrip / BRAPH / MATLAB
-
-Confounds handled (examples): motion, age/sex, site.
+1) Preprocess (realign, coreg, normalize, smooth) in SPM  
+2) First-level GLM (conditions + 6 motion regressors)  
+3) Threshold: FWE/FDR; export contrasts  
+4) Optional: FEAT first-level to compare maps/thresholds
 
 ---
 
-## Results
-- 2–3 key figures (see `results/figures/`)
-- Report thresholds (e.g., FWE/FDR; cluster-permutation for M/EEG) and effect sizes.
+## Results (to be filled)
+- Figure: thresholded activation map over anatomical  
+- Table: peak coordinates, cluster sizes  
+- Note: differences SPM vs FEAT if replicated
 
 ---
 
 ## Reproducibility
-- **Versions:** see `env/TOOL_VERSIONS.md`
-- **Steps to re-run:** bullet list of actions (no raw data)
-- **Known limits:** sample size, heterogeneity, compute
+- Versions in `env/TOOL_VERSIONS.md`.  
+- Steps: “Run SPM preprocessing → specify GLM → estimate → contrasts → export figures.”  
+- Limitations: single-subject demo.
 
 ---
 
-## Cite this work
-A `CITATION.cff` is included—GitHub renders a “Cite this repository” box automatically.  
-When you cut a Release and connect to Zenodo, add the DOI badge here.
-
----
-
-### Author & links
-**Rene Andrade Rey** · 🧪 ORCID: https://orcid.org/0000-0001-5627-579X · 🌐 Google Scholar: https://scholar.google.es/citations?hl=es&user=Nl3ApFEAAAAJ
+**Author:** Rene Andrade Rey · 🧪 ORCID: https://orcid.org/0000-0001-5627-579X · 🌐 Scholar: https://scholar.google.es/citations?hl=es&user=Nl3ApFEAAAAJ
