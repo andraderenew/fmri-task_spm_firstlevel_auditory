@@ -1,6 +1,6 @@
 # Data Sources & Disk Notes
 
-- Dataset: <name> — <link> — License/DUA: <text>
-- Subset downloaded: <N subjects/sessions> (list IDs if small)
-- Disk budget (target): raw ~<X GB>, derivatives ~<Y GB>
-- Notes: use BIDS layout when possible; do NOT commit raw data.
+- Dataset: **SPM Auditory tutorial** — link: <oficial> — License: docente.
+- Subset downloaded: 1 subject (runs: <…>)
+- Disk budget: raw ≤ 1 GB; derivatives ligeros (mapas y tablas).
+- Notes: BIDS o estructura SPM; no subir datos crudos.
