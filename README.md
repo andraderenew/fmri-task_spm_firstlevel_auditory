@@ -1,6 +1,6 @@
 # Task fMRI — SPM First-Level (Auditory) + FEAT replication
 [![License](https://img.shields.io/github/license/andraderenew/fmri-task_spm_firstlevel_auditory)](LICENSE)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.XXXXXXX-blue)](#cite-this-work)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17715106-blue)](https://doi.org/10.5281/zenodo.17715106)
 [![Pages](https://img.shields.io/website?url=https%3A%2F%2Fandraderenew.github.io%2Ffmri-task_spm_firstlevel_auditory%2F)](https://andraderenew.github.io/fmri-task_spm_firstlevel_auditory/)
 ![Release](https://img.shields.io/github/v/release/andraderenew/fmri-task_spm_firstlevel_auditory?include_prereleases)
 ![Last commit](https://img.shields.io/github/last-commit/andraderenew/fmri-task_spm_firstlevel_auditory)

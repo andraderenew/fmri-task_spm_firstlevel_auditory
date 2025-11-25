@@ -10,3 +10,5 @@ abstract: "Classic SPM Auditory first-level GLM with optional FEAT replication t
 license: "MIT"
 repository-code: "https://github.com/andraderenew/fmri-task_spm_firstlevel_auditory"
 url: "https://scholar.google.es/citations?hl=es&user=Nl3ApFEAAAAJ"
+
+doi: "10.5281/zenodo.17715106"
