@@ -1,22 +1,31 @@
-# Tool Versions
+# Tool Versions and Analysis Environment
 
 ## System
-OS: <your OS>  # e.g., Ubuntu LTS / macOS / Windows 11 (WSL2)
+- **OS:** macOS 26.5.2
+- **Architecture:** arm64 (Apple Silicon)
 
-## MATLAB & Toolboxes
-MATLAB: R2025b
-SPM: 25.01.02
-CAT12: 12.9
-EEGLAB: 2025.1.0
-FieldTrip: 20250928
-Brainstorm: self-updating (current build; check Help → Update Brainstorm)
-BRAPH: 2.0.1
+## Software used for the SPM analysis
+- **MATLAB:** R2025b (`25.2.0.2998904`)
+- **SPM:** SPM25, release `25.01.02`
 
-## MRI/FMRI
-FreeSurfer: 8.1.0
-FSL: 6.0.7.19 (FEAT/MELODIC/FDT)
+## SPM analysis settings
+- **Dataset:** SPM Auditory / MoAEpilot BIDS dataset
+- **Subject:** sub-01
+- **Functional volumes analysed:** 84
+- **TR:** 7 s
+- **Slice timing:** 64 slices, descending `64:-1:1`, reference slice 32
+- **Coregistration:** T1 to mean EPI
+- **Normalisation:** MNI space, 3 × 3 × 3 mm functional resolution
+- **Smoothing:** 6 mm FWHM
+- **First-level condition:** listening
+- **Motion nuisance regressors:** 6 realignment parameters
+- **Contrast:** Listening > Rest
+- **Inference:** whole-brain voxel-level FWE p < 0.05
+- **Observed T threshold:** 5.296299
+- **Extent threshold:** 0 voxels
 
-## PET
-PETPVE12 (SPM): 1.0
+## FSL environment available for planned replication
+- **FSL:** 6.0.7.12 (modified local installation)
+- **FEAT:** available on PATH during environment check
 
-Last verified: 2025-11-22
+Documentation updated: 2026-07-15
