@@ -1,0 +1,19 @@
+Contrast: Listening > Rest
+Input volumes: 84
+TR: 7 s
+Motion correction: MCFLIRT
+Slice timing: regular descending
+Functional brain extraction: BET
+Spatial smoothing: SUSAN, 6 mm FWHM
+High-pass filter: 128 s
+First-level model: FILM prewhitening
+Motion nuisance EVs: 6 MCFLIRT parameters
+EV: custom 3-column block timing matching the SPM model
+HRF: FEAT double-gamma convolution
+Threshold: cluster-forming Z > 3.1; cluster significance p < 0.05
+Functional-to-T1 registration: FLIRT 6 DOF
+T1-to-MNI152 registration: FLIRT 12 DOF
+Nonlinear standard-space registration: off
+FSL version:
+FSLDIR:  /Users/andraderenew/fsl
+Version: 6.0.7.12 (modified)
