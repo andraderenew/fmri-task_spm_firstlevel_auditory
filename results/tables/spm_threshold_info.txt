@@ -1,0 +1,12 @@
+Contrast: Listening > Rest
+Threshold: voxel-level FWE p<0.05
+T threshold: 5.296299
+Extent threshold: 0 voxels
+Retained scans: 84 (input BIDS series already contained 84 analysis volumes)
+TR: 7 s
+Slice timing: 64 slices; descending 64:-1:1; reference slice 32
+Normalised functional voxel size: 3 x 3 x 3 mm
+Smoothing: 6 mm FWHM
+Motion nuisance regressors: 6 realignment parameters
+SPM version: SPM25
+MATLAB version: 25.2.0.2998904 (R2025b)
