@@ -1,81 +1,86 @@
 # Mini-Report — Task fMRI Auditory First-Level Analysis
 
 ## Aim
-Reproduce a complete single-subject block-design task-fMRI workflow using the classic SPM Auditory / MoAEpilot dataset and demonstrate preprocessing, first-level GLM specification, nuisance-motion modeling, contrast estimation, statistical thresholding, QC, and reproducible reporting.
-
-A second-stage FSL FEAT replication is planned so that the same task contrast can be compared across two widely used fMRI analysis environments.
+Reproduce a complete single-subject block-design task-fMRI workflow using the classic SPM Auditory / MoAEpilot dataset and compare the same `Listening > Rest` contrast across SPM25 and FSL FEAT.
 
 ## Data
 - Dataset: **SPM Auditory / MoAEpilot** tutorial dataset
 - Subject: **sub-01**
-- Functional series used: **84 volumes**
+- Functional series: **84 volumes**
 - TR: **7 s**
 - Task: block-design auditory stimulation versus rest
-- Raw BIDS/NIfTI data are stored locally and are not committed to GitHub
+- Raw BIDS/NIfTI data remain local and are not committed to GitHub
 
-## Methods
-### Software
-- MATLAB **R2025b**
-- SPM **25.01.02 / SPM25**
-- macOS on Apple Silicon (`arm64`)
-
-### Preprocessing
-1. Realignment (estimate and reslice)
-2. Slice-timing correction with **64 slices**, descending order `64:-1:1`, reference slice **32**
-3. Coregistration of the T1 image to the mean EPI
-4. T1 segmentation and deformation estimation
-5. Functional normalization to MNI space at **3 × 3 × 3 mm**
-6. Spatial smoothing with a **6 mm FWHM** Gaussian kernel
-
-### First-level model
-- Units: scans
-- TR: **7 s**
-- Condition: `listening`
-- Listening onsets: `6:12:84`
-- Block duration: **6 scans**
-- Nuisance regressors: **6 realignment parameters**
+## SPM25 methods
+- MATLAB R2025b and SPM25 release 25.01.02
+- Realignment and reslicing
+- Slice timing: 64 slices, descending `64:-1:1`, reference slice 32
+- T1-to-mean-EPI coregistration
+- T1 segmentation and deformation estimation
+- MNI normalization at 3 mm isotropic functional resolution
+- Spatial smoothing: 6 mm FWHM
+- First-level GLM with listening blocks and 6 realignment nuisance regressors
 - Contrast: **Listening > Rest**
+- Inference: whole-brain voxel-level FWE p < 0.05
 
-### Statistical inference
-- Whole-brain voxel-level **FWE p < 0.05**
-- T threshold: **5.296299**
-- Extent threshold: **0 voxels**
+## FSL FEAT methods
+- FSL 6.0.7.12 local installation
+- MCFLIRT motion correction
+- Regular-descending slice timing
+- BET brain extraction
+- SUSAN smoothing: 6 mm FWHM
+- High-pass filter: 128 s
+- FILM model with prewhitening
+- Double-gamma HRF
+- Six MCFLIRT motion nuisance EVs
+- Functional-to-T1 FLIRT registration: 6 DOF
+- T1-to-MNI152 FLIRT registration: 12 DOF
+- Contrast: **Listening > Rest**
+- Inference: cluster-forming Z > 3.1 and cluster significance p < 0.05
 
 ## Results
-### QC
-- `results/figures/fig0_spm_motion_qc.png` contains translation and rotation traces from SPM realignment.
 
-### Activation figures
-- **Fig 1:** thresholded activation map over the normalized mean EPI: `results/figures/fig1_spm_activation_map.png`
-- **Fig 2:** maximum-intensity projections of the thresholded SPM T-map: `results/figures/fig2_spm_mip.png`
+### SPM25
+- T threshold: **5.296299**
+- Largest clusters: **403** and **213 voxels**
+- Principal peaks: `[-63, -28, 14]` and `[57, -22, 11]`
+- Peak T values: approximately **11.87** bilaterally
 
-### Peak table
-The two largest suprathreshold clusters were:
+### FSL FEAT
+- Largest cluster: **863 voxels**, Z max **10.5**, peak `[-61.1, -27.0, 8.85]`, p = `1.77e-35`
+- Second-largest cluster: **718 voxels**, Z max **10.3**, peak `[58.7, -22.8, 5.68]`, p = `2.85e-31`
 
-| Cluster size (voxels) | Peak T | MNI x | MNI y | MNI z |
-|---:|---:|---:|---:|---:|
-| 213 | 11.8743 | 57 | -22 | 11 |
-| 403 | 11.8681 | -63 | -28 | 14 |
+Both analyses recovered a strong bilateral auditory activation pattern with closely corresponding left and right temporal peak locations.
 
-The complete table is stored in `results/tables/table1_spm_peaks.csv`.
+## Figures
+- Motion QC: `results/figures/fig0_spm_motion_qc.png`
+- SPM activation: `results/figures/fig1_spm_activation_map.png`
+- SPM MIP: `results/figures/fig2_spm_mip.png`
+- FSL FEAT activation: `results/figures/fig3_fsl_feat_activation_map.png`
+- SPM/FSL comparison: `results/figures/fig4_spm_vs_fsl.png`
 
-Threshold and model metadata are stored in `results/tables/spm_threshold_info.txt`.
+## Interpretation
+The cross-software agreement supports successful conceptual replication of the auditory task effect. Exact map correspondence is not expected because the packages differ in HRF modeling, temporal estimation, registration, statistical image scaling, and thresholding.
 
-## QC and interpretation notes
-- The automated workflow generated a dedicated realignment-parameter QC figure rather than relying only on the final statistical map.
-- Statistical results are reported using the actual threshold that survived whole-brain voxel-level FWE correction.
-- Peak coordinates are reported in MNI space.
-- No atlas-based anatomical labels were assigned automatically; this avoids introducing unsupported anatomical labels into the portfolio.
+SPM used voxel-level whole-brain FWE correction, while FEAT used cluster-based inference. Consequently, cluster sizes and p-values should not be treated as directly equivalent across packages.
+
+## QC
+- SPM motion traces were exported and inspected
+- Both workflows included six motion nuisance regressors
+- Both used the same 84-volume series and equivalent block timings
+- The dominant bilateral auditory pattern was reproduced in both packages
 
 ## Limitations
-- Single-subject tutorial dataset; no population-level inference can be made.
-- This is a didactic reproducibility analysis rather than a clinical or hypothesis-confirmatory study.
-- The FSL FEAT replication and cross-software comparison are not yet complete.
-- Motion traces are provided as a QC visualization, but no additional framewise-displacement censoring model was added to this tutorial analysis.
+- Single-subject tutorial dataset; no population-level inference
+- Didactic reproducibility analysis rather than a confirmatory study
+- FSL standard-space registration was affine rather than nonlinear
+- No additional framewise-displacement censoring model
+- No automatic atlas-based anatomical labeling
 
 ## Reproducibility
 - Data provenance: `DATA_SOURCES.md`
-- Software and system information: `env/TOOL_VERSIONS.md`
-- Published statistical settings: `results/tables/spm_threshold_info.txt`
-- Full peak table: `results/tables/table1_spm_peaks.csv`
-- High-level workflow and figures: `README.md`
+- Environment: `env/TOOL_VERSIONS.md`
+- SPM settings: `results/tables/spm_threshold_info.txt`
+- FSL settings: `results/tables/fsl_threshold_info.txt`
+- SPM peaks: `results/tables/table1_spm_peaks.csv`
+- FSL clusters: `results/tables/table2_fsl_clusters.txt`
