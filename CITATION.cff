@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-title: "Task fMRI — SPM First-Level (Auditory) + FEAT replication"
+title: "Task fMRI — SPM25 First-Level (Auditory) + FSL FEAT replication"
 message: "If you use this project, please cite it as below."
 type: software
 authors:
   - family-names: "Andrade Rey"
     given-names: "Rene"
     orcid: "https://orcid.org/0000-0001-5627-579X"
-abstract: "Single-subject task-fMRI reproduction of the classic SPM Auditory block-design analysis using SPM25, including preprocessing, first-level GLM estimation, the Listening > Rest contrast, whole-brain voxel-level FWE inference, motion QC, activation maps, and peak-coordinate reporting; an FSL FEAT replication is planned."
+abstract: "Single-subject task-fMRI reproduction of the classic SPM Auditory block-design analysis in SPM25 and FSL FEAT, including preprocessing, motion nuisance modeling, Listening > Rest first-level contrasts, corrected statistical inference, QC, activation maps, peak and cluster reporting, and a cross-software comparison."
 license: "MIT"
 repository-code: "https://github.com/andraderenew/fmri-task_spm_firstlevel_auditory"
 url: "https://scholar.google.es/citations?hl=es&user=Nl3ApFEAAAAJ"
