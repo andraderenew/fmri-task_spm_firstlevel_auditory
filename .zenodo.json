@@ -7,9 +7,12 @@
     }
   ],
   "title": "Task fMRI — SPM25 First-Level (Auditory) + FSL FEAT replication",
-  "description": "Single-subject task-fMRI reproduction of the classic SPM auditory block-design analysis in SPM25 and FSL FEAT, including preprocessing, motion nuisance modeling, Listening versus Rest first-level contrasts, corrected statistical inference, quality control, activation maps, peak and cluster reporting, and cross-software comparison.",
+  "description": "Single-subject task-fMRI reproduction of the classic SPM auditory block-design analysis in SPM25 and FSL FEAT, including preprocessing, motion nuisance modelling, first-level contrasts, corrected inference, quality control, activation maps, peak and cluster reporting, and cross-software comparison.",
   "version": "0.1.1",
+  "upload_type": "software",
   "access_right": "open",
+  "license": "mit",
+  "language": "eng",
   "keywords": [
     "task fMRI",
     "SPM25",
@@ -18,7 +21,12 @@
     "first-level analysis",
     "neuroimaging"
   ],
-  "license": "mit",
-  "upload_type": "software",
-  "language": "eng"
+  "notes": "Completed reproducible neuroimaging portfolio workflow.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/andraderenew/fmri-task_spm_firstlevel_auditory",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
 }
