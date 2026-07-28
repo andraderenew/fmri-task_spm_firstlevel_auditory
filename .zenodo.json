@@ -1,0 +1,24 @@
+{
+  "creators": [
+    {
+      "name": "Andrade Rey, Rene",
+      "orcid": "0000-0001-5627-579X",
+      "type": "ProjectMember"
+    }
+  ],
+  "title": "Task fMRI — SPM25 First-Level (Auditory) + FSL FEAT replication",
+  "description": "Single-subject task-fMRI reproduction of the classic SPM auditory block-design analysis in SPM25 and FSL FEAT, including preprocessing, motion nuisance modeling, Listening versus Rest first-level contrasts, corrected statistical inference, quality control, activation maps, peak and cluster reporting, and cross-software comparison.",
+  "version": "0.1.1",
+  "access_right": "open",
+  "keywords": [
+    "task fMRI",
+    "SPM25",
+    "FSL FEAT",
+    "auditory task",
+    "first-level analysis",
+    "neuroimaging"
+  ],
+  "license": "mit",
+  "upload_type": "software",
+  "language": "eng"
+}
