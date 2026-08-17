@@ -50,8 +50,14 @@
 ### FSL FEAT thresholded activation
 ![FSL FEAT activation](https://raw.githubusercontent.com/andraderenew/fmri-task_spm_firstlevel_auditory/main/results/figures/fig3_fsl_feat_activation_map.png)
 
-### SPM versus FSL
-![SPM versus FSL](https://raw.githubusercontent.com/andraderenew/fmri-task_spm_firstlevel_auditory/main/results/figures/fig4_spm_vs_fsl.png)
+### Cross-software summary
+![Cross-software peak-coordinate comparison](https://raw.githubusercontent.com/andraderenew/fmri-task_spm_firstlevel_auditory/main/results/figures/fig4_cross_software_summary.png)
+
+The SPM and FEAT results are compared qualitatively at the pattern level.
+Their T/Z statistics, cluster sizes, and significance values are not directly
+interchangeable because the inferential procedures differ.
+
+Peak-coordinate correspondence is approximate because SPM MNI and FSL MNI152 normalized coordinates are not guaranteed to represent identical template geometry; no voxelwise overlap analysis is claimed.
 
 ## Statistical summary
 
@@ -66,13 +72,22 @@
 
 Both pipelines recovered strong bilateral auditory activation. This is a conceptual replication rather than an expectation of exact voxelwise equivalence because the packages use different temporal models, registration strategies, statistical images, and inference procedures.
 
-## Reproducibility
+## Reproducibility and archive status
+
+The repository preserves completed-result figures, quantitative tables,
+threshold information, software metadata, and data provenance. The original
+executable analysis scripts and complete SPM/FEAT derivative workspaces are
+not present in the audited archive; this is therefore not presented as a fully
+executable end-to-end pipeline.
+
+Archived resources:
+
 - `results/tables/table1_spm_peaks.csv`
-- `results/tables/spm_threshold_info.txt`
 - `results/tables/table2_fsl_clusters.txt`
+- `results/tables/spm_threshold_info.txt`
 - `results/tables/fsl_threshold_info.txt`
-- `reports/report.md`
 - `env/TOOL_VERSIONS.md`
+- `DATA_SOURCES.md`
 
 ## Limitations
 Single-subject tutorial analysis, no group-level inference, affine FSL standard-space registration, and non-equivalent cross-package thresholding procedures.

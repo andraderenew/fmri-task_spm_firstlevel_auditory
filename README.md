@@ -87,8 +87,14 @@ The full FSL cluster table is stored in `results/tables/table2_fsl_clusters.txt`
 ### Fig 3 — FSL FEAT thresholded activation
 ![FSL FEAT activation map](results/figures/fig3_fsl_feat_activation_map.png)
 
-### Fig 4 — SPM versus FSL
-![SPM versus FSL](results/figures/fig4_spm_vs_fsl.png)
+### Fig 4 — Controlled cross-software peak comparison
+![Cross-software peak-coordinate comparison](results/figures/fig4_cross_software_summary.png)
+
+Peak-coordinate correspondence is approximate because SPM MNI and FSL MNI152 normalized coordinates are not guaranteed to represent identical template geometry; no voxelwise overlap analysis is claimed.
+
+This summary deliberately keeps the two inferential frameworks separate.
+SPM T statistics and voxel-level FWE results are not numerically equivalent
+to FEAT Z statistics and cluster-based inference.
 
 ## Interpretation
 Both software packages identified strong bilateral activation around superior temporal/auditory regions for `Listening > Rest`. The peak coordinates and dominant hemispheric pattern were similar, but the outputs are not numerically interchangeable because SPM and FEAT used different HRF implementations, temporal models, registration strategies, statistical images, and thresholding frameworks.
@@ -101,10 +107,22 @@ This project therefore demonstrates conceptual replication rather than exact vox
 - FSL clusters: `results/tables/table2_fsl_clusters.txt`
 - FSL settings: `results/tables/fsl_threshold_info.txt`
 
-## Reproducibility
+## Reproducibility and archive status
+
 - Environment: `env/TOOL_VERSIONS.md`
 - Data provenance: `DATA_SOURCES.md`
 - Mini-report: `reports/report.md`
+- SPM settings: `results/tables/spm_threshold_info.txt`
+- FSL settings: `results/tables/fsl_threshold_info.txt`
+- SPM peak table: `results/tables/table1_spm_peaks.csv`
+- FSL cluster table: `results/tables/table2_fsl_clusters.txt`
+
+The cross-audit verified the published numerical summaries against the
+lightweight result tables preserved in this repository. The original executable
+SPM and FEAT analysis scripts and complete derivative workspaces are not
+present in the audited archive. The repository therefore preserves completed
+analysis outputs and parameter provenance, but it is not presented as a fully
+executable end-to-end pipeline.
 
 ## Limitations
 - Single-subject tutorial dataset

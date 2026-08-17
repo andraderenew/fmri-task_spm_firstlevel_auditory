@@ -15,5 +15,5 @@ Functional-to-T1 registration: FLIRT 6 DOF
 T1-to-MNI152 registration: FLIRT 12 DOF
 Nonlinear standard-space registration: off
 FSL version:
-FSLDIR:  /Users/andraderenew/fsl
+FSLDIR: <FSLDIR>
 Version: 6.0.7.12 (modified)
