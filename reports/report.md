@@ -92,5 +92,5 @@ The cross-audit confirmed that the published SPM and FEAT numerical summaries
 match the lightweight result tables retained in the repository. The original
 executable analysis scripts and complete SPM/FEAT derivative workspaces are not
 available in the audited archive. This repository should therefore be treated
-as a provenance-aware archive of completed outputs and parameter metadata
+as a provenance-aware archive of completed outputs and parameter metadata.
 The repository is not presented as a fully executable end-to-end pipeline.

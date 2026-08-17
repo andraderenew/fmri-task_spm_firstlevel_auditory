@@ -124,8 +124,6 @@ present in the audited archive. The repository therefore preserves completed
 analysis outputs and parameter provenance, but it is not presented as a fully
 executable end-to-end pipeline.
 
-The repository is not presented as a fully executable end-to-end pipeline.
-
 ## Limitations
 - Single-subject tutorial dataset
 - No group-level inference

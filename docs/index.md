@@ -89,8 +89,6 @@ Archived resources:
 - `env/TOOL_VERSIONS.md`
 - `DATA_SOURCES.md`
 
-The repository is not presented as a fully executable end-to-end pipeline.
-
 ## Limitations
 Single-subject tutorial analysis, no group-level inference, affine FSL standard-space registration, and non-equivalent cross-package thresholding procedures.
 

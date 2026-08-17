@@ -161,7 +161,7 @@ def main():
 
     fig.suptitle(
         (
-            "SPM25 vs FSL FEAT — spatial correspondence "
+            "SPM25 vs FSL FEAT — approximate spatial correspondence "
             "of dominant Listening > Rest peaks"
         ),
         fontsize=17,
@@ -348,10 +348,11 @@ def main():
         0.5,
         0.035,
         (
-            "Coordinate-level comparison only. "
-            "This is not a voxelwise overlap analysis, and T/Z values, "
-            "cluster sizes, and p-values are not directly interchangeable "
-            "between the two inferential frameworks."
+            "Approximate coordinate-level comparison of reported peaks in "
+            "MNI-normalized spaces. SPM MNI and FSL MNI152 coordinates "
+            "are treated as approximately corresponding; this is not a "
+            "voxelwise overlap analysis. T/Z values, cluster sizes, and "
+            "p-values are not directly interchangeable."
         ),
         ha="center",
         va="center",
