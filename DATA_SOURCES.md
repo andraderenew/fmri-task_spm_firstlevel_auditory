@@ -31,3 +31,15 @@ Only lightweight portfolio outputs are tracked, including:
 
 ## Data policy
 This repository documents how the public tutorial dataset was analyzed without redistributing the raw neuroimaging dataset through GitHub.
+
+## Cross-audit archive note
+
+The repository cross-audit verified the published numerical summaries against
+the lightweight SPM and FEAT result tables retained in Git. The original
+executable analysis scripts and the complete SPM/FEAT derivative workspaces
+were not found in the audited Git history or retained project archive.
+
+Consequently, this repository preserves completed analysis outputs,
+quantitative result tables, threshold metadata, software-environment
+information, and data provenance, but it does not claim full end-to-end
+executability.

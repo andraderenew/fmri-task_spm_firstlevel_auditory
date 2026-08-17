@@ -57,7 +57,9 @@ Both analyses recovered a strong bilateral auditory activation pattern with clos
 - SPM activation: `results/figures/fig1_spm_activation_map.png`
 - SPM MIP: `results/figures/fig2_spm_mip.png`
 - FSL FEAT activation: `results/figures/fig3_fsl_feat_activation_map.png`
-- SPM/FSL comparison: `results/figures/fig4_spm_vs_fsl.png`
+- Controlled peak-coordinate comparison: `results/figures/fig4_cross_software_summary.png`
+
+Peak-coordinate correspondence is approximate because SPM MNI and FSL MNI152 normalized coordinates are not guaranteed to represent identical template geometry; no voxelwise overlap analysis is claimed.
 
 ## Interpretation
 The cross-software agreement supports successful conceptual replication of the auditory task effect. Exact map correspondence is not expected because the packages differ in HRF modeling, temporal estimation, registration, statistical image scaling, and thresholding.
@@ -77,10 +79,18 @@ SPM used voxel-level whole-brain FWE correction, while FEAT used cluster-based i
 - No additional framewise-displacement censoring model
 - No automatic atlas-based anatomical labeling
 
-## Reproducibility
+## Reproducibility and archive status
+
 - Data provenance: `DATA_SOURCES.md`
 - Environment: `env/TOOL_VERSIONS.md`
 - SPM settings: `results/tables/spm_threshold_info.txt`
 - FSL settings: `results/tables/fsl_threshold_info.txt`
 - SPM peaks: `results/tables/table1_spm_peaks.csv`
 - FSL clusters: `results/tables/table2_fsl_clusters.txt`
+
+The cross-audit confirmed that the published SPM and FEAT numerical summaries
+match the lightweight result tables retained in the repository. The original
+executable analysis scripts and complete SPM/FEAT derivative workspaces are not
+available in the audited archive. This repository should therefore be treated
+as a provenance-aware archive of completed outputs and parameter metadata
+The repository is not presented as a fully executable end-to-end pipeline.
