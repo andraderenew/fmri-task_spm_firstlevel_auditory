@@ -10,9 +10,8 @@ abstract: "Single-subject task-fMRI reproduction of the classic SPM auditory blo
 license: "MIT"
 repository-code: "https://github.com/andraderenew/fmri-task_spm_firstlevel_auditory"
 url: "https://github.com/andraderenew/fmri-task_spm_firstlevel_auditory"
-version: "0.1.1"
-date-released: "2026-07-28"
-doi: "10.5281/zenodo.21650414"
+version: "0.1.2"
+date-released: "2026-08-20"
 keywords:
   - "task fMRI"
   - "SPM25"
