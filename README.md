@@ -132,5 +132,5 @@ executable end-to-end pipeline.
 - No atlas-based anatomical labeling was applied automatically
 
 ## Cite this work
-- Concept DOI: **10.5281/zenodo.17715106**
+- Concept DOI: **10.5281/zenodo.17715105**
 - See `CITATION.cff`
